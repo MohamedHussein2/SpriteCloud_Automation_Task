@@ -1,2 +1,0 @@
-pm.environment.set("userId","5")
-pm.environment.set("userName","huda12")

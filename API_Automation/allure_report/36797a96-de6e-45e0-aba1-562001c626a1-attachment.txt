@@ -1,2 +1,0 @@
-pm.environment.set("petId", 10)
-
