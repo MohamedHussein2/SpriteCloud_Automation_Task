@@ -1,0 +1,2 @@
+pm.environment.set("petName","kitty")
+

@@ -1,0 +1,19 @@
+const jsonResponse = pm.response.json();
+
+var username = pm.environment.get("userName");
+var userId = pm.environment.get("userId");
+
+
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Check username is returned correctly", function () {
+  pm.expect(jsonResponse.username).to.eql(username);
+});
+
+pm.test("Check user id is returned correctly", function () {
+  pm.expect(jsonResponse.id).to.eql(parseInt(userId));
+});
+
+pm.sendRequest("https://postman-echo.com/delay/1")

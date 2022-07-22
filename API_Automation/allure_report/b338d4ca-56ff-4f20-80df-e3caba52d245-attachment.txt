@@ -1,0 +1,59 @@
+
+const schema ={
+    "type":"object",
+    "properties":{
+        "id": {
+     "type" : "number"
+    },
+    "category":{     
+        "id": {
+     "type" : "number"},
+      "name": {
+     "type" : "string"
+    }},
+     "name": {
+     "type" : "string"},
+
+     "photoUrls" :{"string":{
+                  "type" : "string"}},
+
+ "tags":
+     {   
+        "id": {
+     "type" : "number"}},
+      "name": {
+     "type" : "string"
+    },
+
+      "status": {
+     "type" : "string"
+    }
+    },
+    "required": [
+        "id",
+        "name"
+    ]
+    
+};
+
+pm.test("Validating schema", function() {
+    pm.response.to.have.jsonSchema(schema);
+})
+
+const jsonResponse = pm.response.json();
+var petId = pm.environment.get("petId");
+
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Pet created successfully with correct pet id", function () {
+    pm.expect(jsonResponse.id).to.eql(petId).toString();
+});
+
+pm.test("Pet status is avaiable", function () {
+    pm.expect(jsonResponse.status).to.eql("available");
+});
+
+
+pm.sendRequest("https://postman-echo.com/delay/1")

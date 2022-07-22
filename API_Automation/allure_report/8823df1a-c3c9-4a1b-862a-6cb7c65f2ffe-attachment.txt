@@ -1,0 +1,12 @@
+const jsonResponse = pm.response.json();
+
+
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(404);
+});
+
+pm.test("Check message returns order not found", function () {
+  pm.expect(jsonResponse.message).to.eql("Order not found");
+});
+
+pm.sendRequest("https://postman-echo.com/delay/1")

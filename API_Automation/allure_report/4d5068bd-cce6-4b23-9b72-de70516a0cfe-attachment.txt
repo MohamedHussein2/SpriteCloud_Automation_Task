@@ -1,0 +1,13 @@
+const jsonResponse = pm.response.json();
+
+var petIdFromCreatePet= pm.environment.get("petId");
+
+pm.test("Status code is 404", function () {
+    pm.response.to.have.status(404);
+});
+
+pm.test("Check message returns pet not found", function () {
+    pm.expect(jsonResponse.message).to.eql("Pet not found");
+});
+
+pm.sendRequest("https://postman-echo.com/delay/1")

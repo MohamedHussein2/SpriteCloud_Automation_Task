@@ -1,0 +1,1 @@
+var username = pm.environment.set("userName", "huda14");
