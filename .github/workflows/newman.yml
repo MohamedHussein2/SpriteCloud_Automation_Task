@@ -26,9 +26,9 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run Postman collection
         working-directory: ./API_Automation
-        run: newman run SpriteCloudApi.postman_collection.json -e SpriteCloud.postman_environment.json --disable-unicode  -r htmlextra --reporter-htmlextra-export ./results/report.html
+        run: newman run SpriteCloudApi.postman_collection.json -e SpriteCloud.postman_environment.json --disable-unicode  -r htmlextra --reporter-htmlextra-export ./newman/report.html
 
       - uses: actions/upload-artifact@v3
         with:
-            name: Newman-Reports
-            path: ./result1
+            name: Newman-Report
+            path: ./newman
