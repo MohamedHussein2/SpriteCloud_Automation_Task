@@ -9,7 +9,7 @@
 
 * All the collection of Postman API will be in "API_Automation"
 
-* for CICD:
+# for CICD:
 
 * In this directory ".github/workflows", you will find the configuration file of github action to run the API and UI automation files
 * Click on Actions Tab, you will find: 1- Java CI with Maven  2- Newman Demo
