@@ -21,6 +21,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
+      working-directory: ./API_Automation
       run: mvn test --file pom.xml
       
     - uses: actions/upload-artifact@v3     # upload test results
