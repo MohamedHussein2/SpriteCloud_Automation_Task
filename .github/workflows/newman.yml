@@ -26,7 +26,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run Postman collection
         run: | 
-              cd SpriteCloud_Automation_Task/API_Automation/
+              cd 
               newman run SpriteCloudApi.postman_collection.json -e SpriteCloud.postman_environment.json --disable-unicode  -r htmlextra --reporter-htmlextra-export ./results/report.html
 
       - uses: actions/upload-artifact@v3
