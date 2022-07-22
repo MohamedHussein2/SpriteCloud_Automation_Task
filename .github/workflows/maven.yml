@@ -29,4 +29,4 @@ jobs:
       with:
         name: test result
         path: |
-          target/surefire-reports/
+          ./UI_Automation/target/surefire-reports/
